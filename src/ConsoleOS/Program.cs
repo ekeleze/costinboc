@@ -1,23 +1,26 @@
 using MOOS;
+using System;
 using System.Runtime;
 
 unsafe class Program
 {
     static void Main() { }
 
-    /*
-     * Minimum system requirement:
-     * 1024MiB of RAM
-     * Memory Map:
-     * 256 MiB - 512MiB   -> System
-     * 512 MiB - ∞     -> Free to use
-     */
-    //Check out Kernel/Misc/EntryPoint.cs
     [RuntimeExport("KMain")]
     static void KMain() 
     {
         Console.Clear();
-        Console.WriteLine("Now you are in MOOS-ConsoleOS!");
+
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine(@" ________  ________  ________  _________  ___  ________   ________  ________  ________");
+        Console.WriteLine(@"|\   ____\|\   __  \|\   ____\|\___   ___\\  \|\   ___  \|\   __  \|\   __  \|\   ____\");
+        Console.WriteLine(@"\ \  \___|\ \  \|\  \ \  \___|\|___ \  \_\ \  \ \  \\ \  \ \  \|\ /\ \  \|\  \ \  \___|");
+        Console.WriteLine(@" \ \  \    \ \  \\\  \ \_____  \   \ \  \ \ \  \ \  \\ \  \ \   __  \ \  \\\  \ \  \");
+        Console.WriteLine(@"  \ \  \____\ \  \\\  \|____|\  \   \ \  \ \ \  \ \  \\ \  \ \  \|\  \ \  \\\  \ \  \");
+        Console.WriteLine(@"   \ \_______\ \_______\____\_\  \   \ \__\ \ \__\ \__\\ \__\ \_______\ \_______\ \_______\");
+        Console.WriteLine(@"    \|_______|\|_______|\_________\   \|__|  \|__|\|__| \|__|\|_______|\|_______|\|_______|");
+        Console.WriteLine(@"                       \|_________|");
+
         for(; ; ) 
         {
             string s = Console.ReadLine();
